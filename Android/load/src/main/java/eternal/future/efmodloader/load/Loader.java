@@ -65,8 +65,8 @@ public class Loader {
             } else {
                 try {
                     log("尝试加载assets中的内核");
-                    //System.loadLibrary("efmodloader");
-                    System.load(cl.getResource("assets/EFModLoader/" + Build.CPU_ABI + "/libloader.so").getPath().substring(5));
+                    System.loadLibrary("efmodloader");
+                    //System.load(cl.getResource("assets/EFModLoader/" + Build.CPU_ABI + "/libloader.so").getPath().substring(5));
                 } catch (Exception e) {
                     log("加载assets中的内核失败: ", e);
                 }

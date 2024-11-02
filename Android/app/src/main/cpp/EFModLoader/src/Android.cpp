@@ -134,25 +134,29 @@ namespace EFModLoader::Android {
             if (filesystem::exists("/sdcard/Documents/EFModLoader/" + EFModLoader)) {
                 if (filesystem::is_directory("/sdcard/Documents/EFModLoader/" + EFModLoader)) {
 
-                    if (filesystem::exists("/sdcard/Documents/EFModLoader/" + EFModLoader + "/kernel/loader.png")) {
+                    if (filesystem::exists("/sdcard/Documents/EFModLoader/" + EFModLoader + "/kernel/libLoader.so.ogg")) {
 
                         std::filesystem::create_directories(*get_cacheDir + "EFModLoader");
 
                         EFLOG(LogLevel::INFO, "EFModLoader", "Android", "Load", "尝试更新内核");
-                        filesystem::copy_file("/sdcard/Documents/EFModLoader/" + EFModLoader + "/kernel/loader.ogg",
-                                              *get_cacheDir + "EFModLoader/loader",
+                        filesystem::copy_file("/sdcard/Documents/EFModLoader/" + EFModLoader + "/kernel/libLoader.so.ogg",
+                                              *get_cacheDir + "EFModLoader/libLoader.so",
                                               filesystem::copy_options::overwrite_existing);
                         EFLOG(LogLevel::INFO, "EFModLoader", "Android", "Load", "内核更新完成");
                     }
 
 
                     clearDirectory(*get_cacheDir + "EFMod/");
-                    copyFilesFromTo("/sdcard/Documents/EFModLoader/" + EFModLoader + "/EFMods/",
+                    copyFilesFromTo("/sdcard/Documents/EFModLoader/" + EFModLoader + "/EFMod/",
                                     *get_cacheDir + "EFMod/");
 
                     //复制私有目录
                     copyFilesFromTo("/sdcard/Documents/EFModLoader/" + EFModLoader + "/Private/",
                                     *get_ExternalDir);
+
+                    copyFilesFromTo("/sdcard/Documents/EFModLoader/" + EFModLoader + "/EFModX/",
+                                    *get_cacheDir + "EFModX");
+
                 } else {
                     EFLOG(LogLevel::ERROR, "EFModLoader", "Android", "Load",
                           "加载的目录不是文件夹！！！");
