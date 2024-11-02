@@ -69,10 +69,11 @@ add_library(
         EFModLoader
         STATIC
         EFModLoader/src/log.cpp
-        EFModLoader/src/api/Register.cpp
+        EFModLoader/src/api/RegisterAPI.cpp
         EFModLoader/src/hook/unity/RegisterHook.cpp
         EFModLoader/src/loader/LoadELFMods.cpp
         EFModLoader/src/Android.cpp
+        EFModLoader/src/getData.cpp
 )
 
 target_include_directories(
@@ -85,6 +86,7 @@ target_link_libraries(
         EFModLoader
         PUBLIC
         log
+        android
         BNM
 )
 

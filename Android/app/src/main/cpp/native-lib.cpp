@@ -7,13 +7,15 @@
 #include <EFModLoader/getData.hpp>
 #include <EFModLoader/loader/LoadELFMods.hpp>
 #include <EFModLoader/api/Redirect.hpp>
-
+#include <EFModLoader/Android.hpp>
 
 JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, [[maybe_unused]] void *reserved) {
     JNIEnv *env;
     vm->GetEnv((void **) &env, JNI_VERSION_1_6);
 
-    EFLOG(EFModLoader::LogLevel::INFO, "Hello", "HELLO", "AAAAAA",  "World");
+
+    EFModLoader::Android::Load(env, "TEFModLoader");
+    EFModLoader::Loader::LoadELFMods::LoadALLMod(*EFModLoader::Android::get_cacheDir + "EFMod/");
 
 
     return JNI_VERSION_1_6;

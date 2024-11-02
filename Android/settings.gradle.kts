@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "EFModLoader"
 include(":app")
- 
+include(":load")
