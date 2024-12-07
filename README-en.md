@@ -4,13 +4,13 @@
 
 ## Supported Platforms
 
-| Platform | Architecture            | Support |
-| -------- | ----------------------- | ------- |
-| Android  | arm64-v8a & armeabi-v7a | ✔      |
-| Windows  | Not supported           | ✘      |
-| Linux    | Not supported           | ✘      |
-| iOS      | Not supported           | ✘      |
-| macOS    | Not supported           | ✘      |
+| Platform | x86_64 | x86 | arm64 | arm32 |
+| -------- | ------ | --- | ----- | ----- |
+| Android  | ✔     | ✔  | ✔    | ✔    |
+| Linux    | ✔     | ✔  | ✔    | ✔    |
+| Windows  | ?      | ?  | ?    | ?    |
+| Mac      | ?      | ?   | ?     | ?     |
+| iOS      | ?      | ×  | ?     | ×    |
 
 * We are working hard to expand support. qwq
 
