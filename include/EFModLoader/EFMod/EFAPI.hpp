@@ -38,7 +38,7 @@ std::map<uint64_t, void*>* FieldMap;
 /// 键为 uint64_t 类型的哈希值，值为 void* 指针，指向具体的函数。
 std::map<uint64_t, void*>* FuncMap;
 
-namespace EFMod::API {
+namespace EFModAPI {
     /**
      * @brief 结构体 EFModAPI_Func 用于唯一标识一个函数。
      *
